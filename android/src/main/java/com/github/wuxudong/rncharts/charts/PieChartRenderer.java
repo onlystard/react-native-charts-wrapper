@@ -615,7 +615,11 @@ public class PieChartRenderer extends DataRenderer {
                             drawEntryLabel(c, entryLabel, x, y + lineHeight / 2f);
                         }
                     } else if (drawYInside) {
-                        drawValue(c, formattedValue, x, y + lineHeight / 2f, dataSet.getValueTextColor(j));
+                        if(value > 5){
+                            drawValue(c, formattedValue, x, y + lineHeight / 2f, dataSet.getValueTextColor(j));
+                        } else{
+                            drawValue(c, "", x, y + lineHeight / 2f, dataSet.getValueTextColor(j));
+                        }
                     }
                 }
 
